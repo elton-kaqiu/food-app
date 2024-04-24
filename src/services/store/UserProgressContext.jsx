@@ -1,4 +1,5 @@
 import {createContext, useState} from "react";
+import {CART, CHECKOUT} from "./types.js";
 
 const UserProgressContext = createContext({
     progress: '',
@@ -17,7 +18,7 @@ export function UserProgressContextProvider({children}) {
     const [userProgress, setUserProgress] = useState('')
 
     function showCart() {
-        setUserProgress('CART')
+        setUserProgress(CART)
     }
 
     function hideCart() {
@@ -25,7 +26,7 @@ export function UserProgressContextProvider({children}) {
     }
 
     function showCheckout() {
-        setUserProgress('CHECKOUT')
+        setUserProgress(CHECKOUT)
     }
 
     function hideCheckout() {
